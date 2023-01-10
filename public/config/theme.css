@@ -1,0 +1,50 @@
+:root {
+  background: linear-gradient(90deg, rgb(42, 138, 234) 0%, rgba(0,0,0,1) 50%, rgb(35, 107, 250) 100%);
+  --primary: #background: rgb(234,190,42);
+  --primary-text: #ffffff;
+  --secondary: #3a8ff0;
+  --secondary-text: #ffffff;
+  --accent: #000000d8;
+  --accent-text: #ffffff;
+  --gold-gradient-box: #ffc40000; 
+}
+
+
+.container {
+  padding: 10px 20px;
+}
+
+.title {
+	font-size: 30px; font-weight: 700; width: 100%; position: relative; text-align: center; display: inline-block; margin-bottom: 20px;
+}
+.bodyOuter > div > .title:first-of-type {
+	font-size: 50px; margin: 50px 0 5px 0;
+}
+
+.btn {
+	color: #fff !important; position: relative; float: left; padding: 5px 12px; background-color: #fff1; border-radius: 8px 2px; font-weight: 600;
+}
+
+.bodyOuter {
+	position: fixed; top: 80px; bottom: 0; left: 0; right: 0; overflow: auto;
+}
+.bodyOuter > div {
+	position: relative; display: inline-block; width: 80%; max-width: 800px;
+}
+/* .card {
+	position: relative; display: inline-block; margin-top: 50px; padding: 30px 50px;   background: rgb(170,139,36); background: linear-gradient(176deg, rgba(170,139,36,1) 0%, rgba(234,190,42,1) 45%, rgba(170,139,36,1) 100%); border-radius: 20px 5px; text-align: left; width: calc(100% - 100px); overflow: hidden;
+} */
+.hl {
+	position: relative; display: inline-block; width: 100%;
+}
+
+@media (max-width: 640px) {
+	.bodyOuter > div {width: 100%;}
+	.bodyOuter > div > .title:first-of-type {max-width: 90%;}
+	.card {border-radius: 0; margin-top: 30px; background-color: #222;}
+	::-webkit-scrollbar {display: none;}
+}
+
+@media (max-width: 450px) {
+	.card {padding-left: 30px; padding-right: 30px; width: calc(100% - 60px);}
+}
