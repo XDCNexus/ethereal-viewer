@@ -90,9 +90,9 @@ export const RoundButtonWrapper = styled.div`
 `;
 
 export const StyledLogo = styled.img`
-  width: 75px;
+  width: 200px;
   @media (min-width: 767px) {
-    width: 75px;
+    width: 150px;
   }
   transition: width 0.5s;
   transition: height 0.5s;
