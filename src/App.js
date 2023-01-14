@@ -116,6 +116,8 @@ export const StyledImg = styled.img`
 export const StyledLink = styled.a`
   color: var(--secondary);
   text-decoration: none;
+  font-size: 20px;
+
 `;
 
 function App() {
@@ -253,7 +255,7 @@ function App() {
           ai={"center"}
           style={{ padding: 24, backgroundColor: "var(--primary)", }}
         >
-          <a rel="noopener noreferrer" href="https://xnexus.io">
+          <a rel="noopener noreferrer" href="https://thenexusportal.io/">
             <StyledLogo alt={"logo"} src={"/config/images/logo.png"} />
           </a>
 
@@ -262,7 +264,7 @@ function App() {
           <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/PoweredByNEXUS">
               <FaTwitter color="white" size={30} />
             </a>
-            <a target="_blank" rel="noopener noreferrer" href="https://discord.gg/pSVRKzyQvs">
+            <a target="_blank" rel="noopener noreferrer" href="https://discord.gg/nexusportal">
               <FaDiscord color="white" size={30} />
             </a>
 
@@ -368,7 +370,7 @@ function App() {
 
 
                     <s.Container ai={"center"} jc={"center"}>
-                      <StyledLink target={"_blank"} href={"https://mintethereals.xnexus.io"}>
+                      <StyledLink target={"_blank"} href={"https://exrp.mint.thenexusportal.io/"}>
                         {"MINT"}
                       </StyledLink>
 
@@ -439,7 +441,7 @@ function App() {
                         YOU DONT HAVE ANY ETHEREALS!
                       </s.TextDescription>
 
-                      <StyledLink target={"_blank"} href={"https://mintethereals.xnexus.io"}>
+                      <StyledLink target={"_blank"} href={"https://exrp.mint.thenexusportal.io/"}>
                         {"MINT NOW!"}
                       </StyledLink>
                     </>

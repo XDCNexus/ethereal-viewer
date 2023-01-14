@@ -12,7 +12,7 @@
   "ETH_COST": 3,
   "DISPLAY_COST": 333,
   "GAS_LIMIT": 2500000,
-  "MARKETPLACE": "https://xnexus.io/",
-  "MARKETPLACE_LINK": "https://xnexus.io/",
+  "MARKETPLACE": "https://thenexusportal.io/",
+  "MARKETPLACE_LINK": "https://thenexusportal.io/",
   "SHOW_BACKGROUND": true
 }
