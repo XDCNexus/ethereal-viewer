@@ -370,7 +370,7 @@ function App() {
 
 
                     <s.Container ai={"center"} jc={"center"}>
-                      <StyledLink target={"_blank"} href={"https://exrp.mint.thenexusportal.io/"}>
+                      <StyledLink target={"_blank"} href={"https://exrp.minter.thenexusportal.io/"}>
                         {"MINT"}
                       </StyledLink>
 
