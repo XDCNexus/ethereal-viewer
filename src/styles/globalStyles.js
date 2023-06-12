@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 // Used for wrapping a page component
 export const Screen = styled.div`
+ font-family: 'Orbitron', sans-serif;
   background-color: var(--primary);
   background-image: ${({ image }) => (image ? `url(${image})` : "none")};
   background-size: cover;
@@ -38,6 +39,7 @@ export const SpacerLarge = styled.div`
 
 // Used for providing a wrapper around a component
 export const Container = styled.div`
+ font-family: 'Orbitron', sans-serif;
   display: flex;
   flex: ${({ flex }) => (flex ? flex : 0)};
   flex-direction: ${({ fd }) => (fd ? fd : "column")};
@@ -53,6 +55,7 @@ export const Container = styled.div`
 `;
 
 export const TextTitle = styled.p`
+ font-family: 'Orbitron', sans-serif;
   color: var(--primary-text);
   font-size: 22px;
   font-weight: 500;
@@ -60,12 +63,14 @@ export const TextTitle = styled.p`
 `;
 
 export const TextSubTitle = styled.p`
+ font-family: 'Orbitron', sans-serif;  
   color: var(--primary-text);
   font-size: 18px;
   line-height: 1.6;
 `;
 
 export const TextDescription = styled.p`
+ font-family: 'Orbitron', sans-serif;
   color: var(--primary-text);
   font-size: 16px;
   line-height: 1.6;

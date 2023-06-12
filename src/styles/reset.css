@@ -86,6 +86,7 @@ video {
   font: inherit;
   vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
 article,
 aside,
@@ -100,17 +101,21 @@ nav,
 section {
   display: block;
 }
+
 body {
   line-height: 1;
 }
+
 ol,
 ul {
   list-style: none;
 }
+
 blockquote,
 q {
   quotes: none;
 }
+
 blockquote:before,
 blockquote:after,
 q:before,
@@ -118,20 +123,20 @@ q:after {
   content: "";
   content: none;
 }
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
 @font-face {
-  font-family: "Lucida Console";
-  src: local("Lucida Console");
+  font-family: 'Orbitron', sans-serif;
+  src: local("Orbitron");
 }
 
 body {
   margin: 0;
-  font-family: "Lucida Console Condensed";
-  -webkit-font-smoothing: antialiased;
+ font-family: 'Orbitron', sans-serif;  -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
@@ -142,8 +147,7 @@ body {
 }
 
 code {
-  font-family: "Roboto Condensed";
-}
+ font-family: 'Orbitron', sans-serif;}
 
 body::-webkit-scrollbar {
   display: none;
