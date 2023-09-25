@@ -1,10 +1,10 @@
 {
-  "CONTRACT_ADDRESS": "0x58F65d03b8d5e793D042236dBba142de40fd6a94",
-  "SCAN_LINK": "https://evm-sidechain.xrpl.org/token/0x58F65d03b8d5e793D042236dBba142de40fd6a94",
+  "CONTRACT_ADDRESS": "0xC9e107660ee34487212239F56fD0a4f696dFb33e",
+  "SCAN_LINK": "https://evm-sidechain.xrpl.org/token/0xC9e107660ee34487212239F56fD0a4f696dFb33e",
   "NETWORK": {
     "NAME": "eXRP ",
     "SYMBOL": "eXRP",
-    "ID": 1440001
+    "ID": 1440002
   },
   "NFT_NAME": "Nexus Ethereals",
   "SYMBOL": "ETHER",
