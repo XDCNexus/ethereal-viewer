@@ -414,7 +414,7 @@ function App() {
 
 
                           <s.Container ai={"center"} jc={"center"}>
-                            <StyledLink target={"_blank"} href={"https://exrp.minter.thenexusportal.io/"}>
+                            <StyledLink target={"_blank"} href={"https://xdca.minter.thenexusportal.io/"}>
                               {"MINT"}
                             </StyledLink>
 
@@ -486,7 +486,7 @@ function App() {
                               YOU DONT HAVE ANY ETHEREALS!
                             </s.TextDescription>
 
-                            <StyledLink target={"_blank"} href={"https://exrp.mint.thenexusportal.io/"}>
+                            <StyledLink target={"_blank"} href={"https://xdca.mint.thenexusportal.io/"}>
                               {"MINT NOW!"}
                             </StyledLink>
                           </>

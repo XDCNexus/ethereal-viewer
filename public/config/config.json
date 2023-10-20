@@ -1,15 +1,15 @@
 {
-  "CONTRACT_ADDRESS": "0xC9e107660ee34487212239F56fD0a4f696dFb33e",
-  "SCAN_LINK": "https://evm-sidechain.xrpl.org/token/0xC9e107660ee34487212239F56fD0a4f696dFb33e",
+  "CONTRACT_ADDRESS": "0x7174515087DE0b1dE50fADC076124284De5E17B3",
+  "SCAN_LINK": "https://apothem.blocksscan.io/tokens/xdc7174515087DE0b1dE50fADC076124284De5E17B3",
   "NETWORK": {
-    "NAME": "eXRP ",
-    "SYMBOL": "eXRP",
-    "ID": 1440002
+    "NAME": "tXDC ",
+    "SYMBOL": "tXDC",
+    "ID": 51
   },
   "NFT_NAME": "Nexus Ethereals",
   "SYMBOL": "ETHER",
   "MAX_SUPPLY": 11111,
-  "ETH_COST": 3,
+  "ETH_COST": 333,
   "DISPLAY_COST": 333,
   "GAS_LIMIT": 2500000,
   "MARKETPLACE": "https://thenexusportal.io/",
