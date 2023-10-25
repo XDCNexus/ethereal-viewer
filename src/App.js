@@ -553,8 +553,8 @@ function NFTDisplay({ tokenId, nftCount, points }) {
   return (
     <s.Container ai={"center"} jc={"center"}>
       <br /><br />
-      <div className="card" >
-        <div className="card-body" >
+      <div className="card" style={{ backgroundColor: 'transparent' }}>
+        <div className="card-body" style={{ backgroundColor: 'transparent' }}>
           <s.TextDescription
             style={{
               textAlign: "center",
