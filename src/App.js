@@ -425,7 +425,7 @@ function App() {
                                 color: "var(--accent-text)",
                               }}
                             >
-                              YOU HAVE {nexusBalance} ETHEREALS!
+                              YOU HAVE {nexusBalance} CELESTIALS!
                             </s.TextDescription>
 
                             <s.TextDescription
@@ -483,7 +483,7 @@ function App() {
                                 color: "var(--accent-text)",
                               }}
                             >
-                              YOU DONT HAVE ANY ETHEREALS!
+                              YOU DONT HAVE ANY CELESTIALS!
                             </s.TextDescription>
 
                             <StyledLink target={"_blank"} href={"https://exrp.mint.thenexusportal.io/"}>
@@ -531,7 +531,7 @@ function NFTDisplay({ tokenId, nftCount, points }) {
               color: "var(--accent-text)",
             }}
           >
-            Ethereal #{tokenId}
+            Celestial #{tokenId}
           </s.TextDescription>
 
           <s.TextDescription

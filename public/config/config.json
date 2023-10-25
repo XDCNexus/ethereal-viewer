@@ -1,16 +1,16 @@
 {
-  "CONTRACT_ADDRESS": "0xC9e107660ee34487212239F56fD0a4f696dFb33e",
-  "SCAN_LINK": "https://evm-sidechain.xrpl.org/token/0xC9e107660ee34487212239F56fD0a4f696dFb33e",
+  "CONTRACT_ADDRESS": "0xF068F2698a748A970970de3f4CD237E6b76b1fEf",
+  "SCAN_LINK": "https://xdcscan.io/address/xdcf068f2698a748a970970de3f4cd237e6b76b1fef",
   "NETWORK": {
-    "NAME": "eXRP ",
-    "SYMBOL": "eXRP",
-    "ID": 1440002
+    "NAME": "XDC ",
+    "SYMBOL": "XDC",
+    "ID": 50
   },
-  "NFT_NAME": "Nexus Ethereals",
+  "NFT_NAME": "Nexus Celestials",
   "SYMBOL": "ETHER",
-  "MAX_SUPPLY": 11111,
+  "MAX_SUPPLY": 8888,
   "ETH_COST": 3,
-  "DISPLAY_COST": 333,
+  "DISPLAY_COST": 3,
   "GAS_LIMIT": 2500000,
   "MARKETPLACE": "https://thenexusportal.io/",
   "MARKETPLACE_LINK": "https://thenexusportal.io/",
