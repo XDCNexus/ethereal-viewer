@@ -157,6 +157,8 @@ function App() {
   const [nexusNfts, setNexusNfts] = useState();
   const [oTotalPoints, setoTotalPoints] = useState();
   const [fetched, setFetched] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
 
 
 
@@ -262,26 +264,44 @@ function App() {
             />
 
             <ResponsiveWrapper>
-              <video
-                autoPlay
-                loop
-                muted
-                style={{
-                  position: "fixed",
-                  width: "100%",
-                  left: "50%",
-                  top: "50%",
-                  height: "100%",
-                  objectFit: "cover",
-                  transform: "translate(-50%, -50%)",
-                  zIndex: "-1",
+              {windowWidth > 768 ? ( // 768px is a common breakpoint for tablets. Adjust as necessary.
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  style={{
+                    position: "fixed",
+                    width: "100%",
+                    left: "50%",
+                    top: "50%",
+                    height: "100%",
+                    objectFit: "cover",
+                    transform: "translate(-50%, -50%)",
+                    zIndex: "-1",
 
 
-                }}>
+                  }}>
 
-                <source src={loop} type="video/mp4" />
+                  <source src={loop} type="video/mp4" />
 
-              </video>
+                </video>
+              ) : (
+                <img
+                  src="/config/images/bg.jpg"
+                  alt="Background"
+                  style={{
+                    position: "fixed",
+                    width: "100%",
+                    left: "50%",
+                    top: "50%",
+                    height: "100%",
+                    objectFit: "cover",
+                    transform: "translate(-50%, -50%)",
+                    zIndex: "-1"
+                  }}
+                />
+
+              )}
 
               <s.Container
                 flex={1}
@@ -424,7 +444,7 @@ function App() {
 
 
                           <s.Container ai={"center"} jc={"center"}>
-                            <StyledLink target={"_blank"} href={"https://exrp.minter.thenexusportal.io/"}>
+                            <StyledLink target={"_blank"} href={"https://minter.thenexusportal.io/"}>
                               {"MINT"}
                             </StyledLink>
 
