@@ -404,9 +404,19 @@ function App() {
                             getWalletTokens();
                             clickAudio.play();
                           }}
+                          style={{
+                            cursor: 'pointer'
+                          }}
+                          onMouseEnter={() => {
+                            document.body.style.cursor = 'pointer';
+                          }}
+                          onMouseLeave={() => {
+                            document.body.style.cursor = 'default';
+                          }}
                         >
-                          <span style={{ padding: '20px 30px', }}>FETCH NFTs</span>
+                          <span style={{ padding: '20px 30px' }}>FETCH NFTs</span>
                         </Frame>
+
 
                         <s.SpacerSmall />
 
@@ -445,7 +455,7 @@ function App() {
                             >
                               ⚠ Please keep in mind the points displayed here do not include any bonuses!
                             </s.TextDescription> */}
-                            
+
                             {/* <StyledLink target={"_blank"} href={"https://seer2.Nexus.io"}>
                               {"SEER ALTERNATIVE"}
                             </StyledLink> */}
