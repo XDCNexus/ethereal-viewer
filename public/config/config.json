@@ -1,16 +1,16 @@
 {
-  "CONTRACT_ADDRESS": "0xF068F2698a748A970970de3f4CD237E6b76b1fEf",
+  "CONTRACT_ADDRESS": "0x5272CAeB01711AF57A119A53BE1b863cDe8178bd",
   "SCAN_LINK": "https://xdcscan.io/address/xdcf068f2698a748a970970de3f4cd237e6b76b1fef",
   "NETWORK": {
     "NAME": "XDC ",
     "SYMBOL": "XDC",
     "ID": 50
   },
-  "NFT_NAME": "Nexus Celestials",
+  "NFT_NAME": "Nexus Celestials✨",
   "SYMBOL": "ETHER",
   "MAX_SUPPLY": 8888,
-  "ETH_COST": 3,
-  "DISPLAY_COST": 3,
+  "ETH_COST": 1111,
+  "DISPLAY_COST": 1111,
   "GAS_LIMIT": 2500000,
   "MARKETPLACE": "https://thenexusportal.io/",
   "MARKETPLACE_LINK": "https://thenexusportal.io/",

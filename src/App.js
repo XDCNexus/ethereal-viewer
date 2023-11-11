@@ -547,8 +547,8 @@ function NFTDisplay({ tokenId, nftCount, points }) {
   // const metadataURI = `${contentId}/${tokenId}.json`;
   // const imageURI = `https://gateway.pinata.cloud/ipfs/${contentId}/${tokenId}.png`;
   //   const imageURI = `img/${tokenId}.png`;
-  const imageURI = `https://ethereals.fra1.cdn.digitaloceanspaces.com/images/${tokenId}.jpeg`;
-  const metadataLink = `https://ethereals.fra1.cdn.digitaloceanspaces.com/metadata//${tokenId}.json`;
+  const imageURI = `https://celestials.fra1.cdn.digitaloceanspaces.com/celest/public/assets/${tokenId}.jpeg`;
+  const metadataLink = `https://celestials.fra1.cdn.digitaloceanspaces.com/celest/public/metadata/${tokenId}.json`;
 
   return (
     <s.Container ai={"center"} jc={"center"}>
