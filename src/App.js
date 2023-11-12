@@ -464,7 +464,7 @@ function App() {
                                 color: "var(--accent-text)",
                               }}
                             >
-                              YOUR TOTAL NEXUS POINTS: {oTotalPoints}
+                              YOUR TOTAL NEXUS QI LEVEL: {oTotalPoints}
                             </s.TextDescription>
 
                             {/* <s.TextDescription
@@ -570,7 +570,7 @@ function NFTDisplay({ tokenId, nftCount, points }) {
               color: "var(--accent-text)",
             }}
           >
-            Points: {points}
+            Qi Level: {points}
           </s.TextDescription>
           <a href={metadataLink} target="_blank" >
             <img className="card-img-top" src={imageURI} style={{ width: '250px' }} ></img>
