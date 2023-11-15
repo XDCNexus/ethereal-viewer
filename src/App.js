@@ -461,11 +461,16 @@ function App() {
                             <s.TextDescription
                               style={{
                                 textAlign: "center",
-                                color: "var(--accent-text)",
+                                color: "red",
+                                width: "500px",             // Set the width of the box
+                                margin: "0 auto",           // Center the box horizontally
+                                padding: "10px",            // Optional: Add some padding inside the box (customize as needed)
                               }}
                             >
-                              YOUR TOTAL NEXUS QI LEVEL: {oTotalPoints}
+                              {/* YOUR TOTAL NEXUS QI LEVEL: {oTotalPoints} */}
+                              NEXUS QI LEVELS ARE BEING CALCULATED BY THE NEXUS AI CORE. PLEASE CHECK BACK LATER.
                             </s.TextDescription>
+
 
                             {/* <s.TextDescription
                               style={{
