@@ -149,13 +149,27 @@ export const StyledLink = styled.a`
 
 `;
 
+async function fetchQiLevel(tokenId) {
+  try {
+    const response = await fetch(`https://qi-level.fra1.cdn.digitaloceanspaces.com/qi/public/metadata/${tokenId}.json`);
+    const metadata = await response.json();
+    const qiLevelAttribute = metadata.attributes.find(attr => attr.trait_type === 'Qi_Level');
+    return qiLevelAttribute ? parseInt(qiLevelAttribute.value, 10) : 0;
+  } catch (error) {
+    console.error(`Error fetching Qi level for token ID ${tokenId}:`, error);
+    return 0; // Return 0 in case of an error
+  }
+}
+
 function App() {
   const dispatch = useDispatch();
   const blockchain = useSelector((state) => state.blockchain);
   const data = useSelector((state) => state.data);
   const [nexusBalance, setNexusBalance] = useState();
-  const [nexusNfts, setNexusNfts] = useState();
+  const [nexusNfts, setNexusNfts] = useState([]);
   const [oTotalPoints, setoTotalPoints] = useState();
+  const [walletNfts, setWalletNfts] = useState([]);
+
   const [fetched, setFetched] = useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
@@ -191,37 +205,35 @@ function App() {
 
   };
 
+
+  const fetchAndSumQiLevels = async () => {
+    let totalPoints = 0;
+    for (const id of nexusNfts) {
+      const qiLevel = await fetchQiLevel(id);
+      totalPoints += qiLevel; // Sum the Qi levels
+    }
+    setoTotalPoints(totalPoints); // Update the total points state
+  };
+
+
   const getWalletTokens = async () => {
     if (blockchain.account !== "" && blockchain.smartContract !== null) {
       const nftBalance = await blockchain.smartContract.methods.balanceOf(blockchain.account).call();
-      // console.log(nftBalance);
       setNexusBalance(nftBalance);
 
-
-      const walletNfts = await blockchain.smartContract.methods.walletOfOwner(blockchain.account).call();
-      // console.log(walletNfts);
-      setNexusNfts(walletNfts);
-      console.log(walletNfts)
-
-      let totalPoints = 0;
-      for (const id of walletNfts) {
-        console.log(id)
-        let oPoint = nexusPoints.at(id - 1);
-        totalPoints += oPoint;
-        console.log(oPoint)
-      }
-      setoTotalPoints(totalPoints)
-      console.log(totalPoints);
+      const fetchedWalletNfts = await blockchain.smartContract.methods.walletOfOwner(blockchain.account).call();
+      setWalletNfts(fetchedWalletNfts); // Update the state here
 
       if (nftBalance > 0) {
-        setFetched(true)
+        setFetched(true);
       }
     }
+    const walletNfts = await blockchain.smartContract.methods.walletOfOwner(blockchain.account).call();
+    setNexusNfts(walletNfts || []);
 
-    // const tPoints = nexusNfts.map((id) => (
-    //   totalPoints = nexusPoints.at(id - 1) + totalPoints
-    // ));
-
+    if (walletNfts.length > 0) {
+      fetchAndSumQiLevels();
+    }
 
   };
 
@@ -244,6 +256,26 @@ function App() {
   useEffect(() => {
     getData();
   }, [blockchain.account]);
+
+  useEffect(() => {
+    let totalPoints = 0;
+    const fetchAndSumQiLevels = async () => {
+      for (const id of walletNfts) {
+        try {
+          const qiLevel = await fetchQiLevel(id);
+          totalPoints += qiLevel;
+        } catch (error) {
+          console.error(`Error fetching Qi level for NFT ${id}:`, error);
+        }
+      }
+      setoTotalPoints(totalPoints);
+    };
+
+    if (walletNfts.length > 0) {
+      fetchAndSumQiLevels();
+    }
+  }, [walletNfts]);
+
 
   return (
     <ThemeProvider theme={theme}>
@@ -461,14 +493,10 @@ function App() {
                             <s.TextDescription
                               style={{
                                 textAlign: "center",
-                                color: "red",
-                                width: "500px",             // Set the width of the box
-                                margin: "0 auto",           // Center the box horizontally
-                                padding: "10px",            // Optional: Add some padding inside the box (customize as needed)
+                                color: "white",
                               }}
                             >
-                              {/* YOUR TOTAL NEXUS QI LEVEL: {oTotalPoints} */}
-                              NEXUS QI LEVELS ARE BEING CALCULATED BY THE NEXUS AI CORE. PLEASE CHECK BACK LATER.
+                              YOUR TOTAL NEXUS QI LEVEL: {oTotalPoints}
                             </s.TextDescription>
 
 
@@ -494,18 +522,19 @@ function App() {
                               YOU HAVE {tPoints} NEXUS POINTS!
                             </s.TextDescription> */}
 
-
                             <div>
                               <div className="container">
                                 <div className="row">
                                   {nexusNfts.map((id) => (
                                     <div key={id} className="col-sm">
-                                      <NFTDisplay tokenId={id} nftCount={nexusBalance} points={nexusPoints.at(id - 1)} />
+                                      <NFTDisplay tokenId={id} nftCount={nexusBalance} />
                                     </div>
                                   ))}
                                 </div>
                               </div>
                             </div>
+
+
 
                           </s.Container>
 
@@ -521,7 +550,7 @@ function App() {
                               YOU DONT HAVE ANY CELESTIALS!
                             </s.TextDescription>
 
-                            <StyledLink target={"_blank"} href={"https://exrp.mint.thenexusportal.io/"}>
+                            <StyledLink target={"_blank"} href={"https://minter.thenexusportal.io/"}>
                               {"MINT NOW!"}
                             </StyledLink>
                           </>
@@ -547,13 +576,20 @@ function App() {
 
 export default App;
 
-function NFTDisplay({ tokenId, nftCount, points }) {
-  // const contentId = 'Qmdbpbpy7fA99UkgusTiLhMWzyd3aETeCFrz7NpYaNi6zY';
-  // const metadataURI = `${contentId}/${tokenId}.json`;
-  // const imageURI = `https://gateway.pinata.cloud/ipfs/${contentId}/${tokenId}.png`;
-  //   const imageURI = `img/${tokenId}.png`;
+function NFTDisplay({ tokenId }) {
   const imageURI = `https://celestials.fra1.cdn.digitaloceanspaces.com/celest/public/assets/${tokenId}.jpeg`;
   const metadataLink = `https://celestials.fra1.cdn.digitaloceanspaces.com/celest/public/metadata/${tokenId}.json`;
+
+  const [qiLevel, setQiLevel] = useState('');
+
+  useEffect(() => {
+    const loadQiLevel = async () => {
+      const level = await fetchQiLevel(tokenId);
+      setQiLevel(level);
+    };
+
+    loadQiLevel();
+  }, [tokenId]);
 
   return (
     <s.Container ai={"center"} jc={"center"}>
@@ -575,10 +611,10 @@ function NFTDisplay({ tokenId, nftCount, points }) {
               color: "var(--accent-text)",
             }}
           >
-            Qi Level: {points}
+            Qi Level: {qiLevel || 'Loading...'}
           </s.TextDescription>
           <a href={metadataLink} target="_blank" >
-            <img className="card-img-top" src={imageURI} style={{ width: '250px' }} ></img>
+            <img className="card-img-top" src={imageURI} style={{ width: '250px' }} alt={`Celestial #${tokenId}`} ></img>
           </a>
         </div>
 
@@ -586,4 +622,3 @@ function NFTDisplay({ tokenId, nftCount, points }) {
     </s.Container>
   );
 }
-
